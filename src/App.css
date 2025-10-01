@@ -1,38 +1,389 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  user-select: none;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body, html, #root, .App {
+  height: 100%;
+  width: 100%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: linear-gradient(to bottom, #1a237e, #283593, #303f9f);
+  overflow: hidden;
   color: white;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Start Screen */
+.start-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1a237e, #283593, #303f9f);
+  z-index: 1;
+}
+
+.start-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  color: #333;
+  max-width: 400px;
+}
+
+.start-content h1 {
+  font-size: 2.5rem;
+  color: #ff6f61;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.demo-scene {
+  margin: 30px 0;
+  position: relative;
+  height: 200px;
+  background: linear-gradient(to bottom, #2e7d32, #4caf50);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.demo-road {
+  position: relative;
+  width: 110%;
+  height: 100%;
+  background: #555;
+}
+
+.demo-car {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  animation: demoCarMove 3s ease-in-out infinite;
+}
+
+.demo-obstacle {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  animation: demoObstacleMove 3s linear infinite;
+}
+
+@keyframes demoCarMove {
+  0%, 100% { transform: translateX(-50%); }
+  50% { transform: translateX(-80%); }
+}
+
+@keyframes demoObstacleMove {
+  0% { top: -40px; }
+  100% { top: 200px; }
+}
+
+.start-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #666;
+  font-weight: bold;
+}
+
+.start-button {
+  font-size: 1.5rem;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff6f61, #ff8a65);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #d94a3a;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.start-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 11px 0 #d94a3a;
+}
+
+.start-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 6px 0 #d94a3a;
+}
+
+/* Game Over Screen */
+.gameover-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(211, 47, 47, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  flex-direction: column;
+}
+
+.gameover-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  color: #333;
+  max-width: 400px;
+}
+
+.gameover-content h1 {
+  font-size: 2.1rem;
+  color: #d32f2f;
+  margin-bottom: 20px;
+}
+
+.gameover-content p {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.restart-button {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #388e3c, #4caf50);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #2e7d32;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.restart-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 11px 0 #2e7d32;
+}
+
+/* Scoreboard */
+.scoreboard {
+  position: absolute;
+  top: 20px;
+  width: 300px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 15;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+/* Game Area */
+.game-area-container {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  margin: 20px auto;
+  border: 4px solid #ffd54f;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to bottom, #1a237e, #283593);
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Road */
+.road {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  /* right: 50px; */
+  width: 300px;
+  height: 100%;
+  background: #424242;
+  /* background-image: 
+    linear-gradient(90deg, transparent 49%, #ffd54f 49%, #ffd54f 51%, transparent 51%),
+    linear-gradient(90deg, transparent 49%, #ffd54f 49%, #ffd54f 51%, transparent 51%); */
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px;
+  animation: roadMove 2s linear infinite;
+}
+
+@keyframes roadMove {
+  0% {
+    background-position: 0 0, 50px 50px;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-position: 0 100px, 50px 150px;
   }
+}
+
+.road-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 25px,
+    /* #ffd54f 25px,
+    #ffd54f 30px */
+  );
+  animation: roadLinesMove 1s linear infinite;
+}
+
+@keyframes roadLinesMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+/* Lane Markers */
+.lane-marker {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.lane-marker.left {
+  left: 140px;
+}
+
+.lane-marker.right {
+  left: 150px;
+}
+
+/* Car */
+.car {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: left 0.2s ease;
+  filter: drop-shadow(3px 5px 3px rgba(0, 0, 0, 0.5));
+  animation: carBounce 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes carBounce {
+  0% { transform: translateY(-1px); }
+  100% { transform: translateY(1px); }
+}
+
+/* Obstacles */
+.obstacle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.5));
+  animation: obstacleRotate 2s linear infinite;
+}
+
+@keyframes obstacleRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(5deg); }
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+  .game-area-container {
+    width: 280px;
+    height: 560px;
+  }
+  
+  .road {
+    left: 40px;
+    width: 200px;
+  }
+  
+  .lane-marker.left {
+    left: 107px;
+  }
+  
+  .lane-marker.right {
+    left: 173px;
+  }
+  
+  .scoreboard {
+    width: 280px;
+  }
+  
+  .start-content, .gameover-content {
+    padding: 30px;
+    margin: 20px;
+  }
+  
+  .start-content h1, .gameover-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Game state animations */
+.game-area.playing {
+  animation: gamePulse 2s ease-in-out infinite;
+}
+
+@keyframes gamePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+.game-area.gameover {
+  filter: grayscale(0.8) brightness(0.7);
+  transition: filter 0.5s ease;
 }
