@@ -1,3 +1,6 @@
+//https://www.blackbox.ai/chat/AGdo9wL  Blackbox AI
+
+
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 
@@ -254,8 +257,8 @@ const GameOverScreen = ({ score, highScore, onRestart }) => {
     <div className="gameover-screen">
       <div className="gameover-content">
         <h1>💥 Game Over! 💥</h1>
-        <p>Your Score: {score} seconds</p>
-        <p>High Score: {highScore} seconds</p>
+        <p>Your Score: {score}</p>
+        <p>High Score: {highScore}</p>
         <button className="restart-button" onClick={onRestart}>
           🎮 Play Again
         </button>
@@ -267,8 +270,8 @@ const GameOverScreen = ({ score, highScore, onRestart }) => {
 const ScoreBoard = ({ score, highScore }) => {
   return (
     <div className="scoreboard">
-      <div className="high-score">🏆 High: {Math.floor(highScore)}s</div>
-      <div className="current-score">⏱️ Score: {Math.floor(score)}s</div>
+      <div className="high-score">🏆 High: {Math.floor(highScore)}</div>
+      <div className="current-score">⏱️ Score: {Math.floor(score)}</div>
     </div>
   );
 };
