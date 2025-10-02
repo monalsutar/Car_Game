@@ -236,8 +236,8 @@ body, html, #root, .App {
   position: absolute;
   top: 0;
   left: 0px;
-  /* right: 50px; */
-  width: 300px;
+  right: 50px;
+  width: 200vw;
   height: 100%;
   background: #424242;
   /* background-image: 
@@ -286,8 +286,7 @@ body, html, #root, .App {
 .lane-marker {
   position: absolute;
   top: 0;
-  height: 100%;
-  width: 5px;
+  
   background: rgba(255, 255, 255, 0.3);
   z-index: 2;
 }
