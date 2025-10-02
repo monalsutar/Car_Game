@@ -108,21 +108,21 @@ function App() {
 
     function gameLoop(timestamp) {
       if (!lastTimestamp.current) lastTimestamp.current = timestamp;
-      const delta = (timestamp - lastTimestamp.current) / 1000; // seconds
+      const delta = (timestamp - lastTimestamp.current) / 1200; // seconds
       lastTimestamp.current = timestamp;
 
       // Update score
       setScore(prev => prev + delta);
 
       // Increase game speed gradually (capped at 3x)
-      setGameSpeed(prev => Math.min(3, prev + delta * 0.01));
+      setGameSpeed(prev => Math.min(2, prev + delta * 0.01));
 
       // Move obstacles down
       setObstacles(prevObs => {
         const newObs = prevObs
           .map(obs => ({
             ...obs,
-            y: obs.y + 150 * gameSpeed * delta // pixels per second
+            y: obs.y + 100 * gameSpeed * delta // pixels per second
           }))
           .filter(obs => obs.y < GAME_AREA.height + 100); // remove when off screen
 

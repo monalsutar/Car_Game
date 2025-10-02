@@ -1,70 +1,79 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# 🚗 Car Racing Game in React
 
-In the project directory, you can run:
+Welcome to the **Car Racing Game**, a fun and engaging browser-based game built with React. Navigate your car through an endless road, dodge obstacles, and aim for the highest score!
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🎮 Game Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Objective**: Drive your car along a continuous road, avoiding obstacles to achieve the highest score.
+* **Controls**: Swipe left, center, or right to move the car (mobile) or use arrow keys (desktop).
+* **Game Over**: Colliding with an obstacle stops the game and displays your final score.
+* **Scoring**: Your score increases over time, with the current and highest scores displayed during gameplay.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Features
 
-### `npm run build`
+* **Animated Cartoon Background**: A lively, animated road scene sets the stage.
+* **Responsive Controls**: Optimized for both mobile and desktop play.
+* **Smooth Animations**: Fluid car movements and obstacle interactions.
+* **Persistent High Score**: Retains the highest score across sessions.
+* **Game Restart Option**: Easily restart the game after a game over.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+Ensure you have the following installed:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* [Node.js](https://nodejs.org/)
+* [npm](https://www.npmjs.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone the repository and install dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/monalsutar/Car_Game.git
+cd Car_Game
+npm install
+```
 
-## Learn More
+### Running the Game
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start the development server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+Open [http://localhost:3000](http://localhost:3000) in your browser to play.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📸 Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Game Screenshot](path/to/screenshot.png)
 
-### Making a Progressive Web App
+*Include a screenshot showcasing the game interface.*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🧪 Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* React
+* CSS Animations
+* JavaScript
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 License
 
-### `npm run build` fails to minify
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
