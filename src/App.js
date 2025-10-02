@@ -127,7 +127,7 @@ function App() {
           .filter(obs => obs.y < GAME_AREA.height + 100); // remove when off screen
 
         // Add new obstacle with proper spacing (every 1-2 seconds)
-        const currentTime = timestamp / 2000;
+        const currentTime = timestamp / 1550;
         const timeSinceLastObstacle = currentTime - lastObstacleTime.current;
         const minTimeBetweenObstacles = Math.max(0.8, 2 - gameSpeed * 0.3); // Decreases with speed
         
