@@ -11,7 +11,7 @@ const GAME_AREA = {
 
 const LANES = [0, 1, 2]; // 0: left, 1: center, 2: right
 const LANE_WIDTH = GAME_AREA.width / 3;
-const OBSTACLE_TYPES = ["🚧", "🛑", "🚗", "🚕", "🚙", "🚓", "🚒", "🚜", "🚚", "🚛"];
+const OBSTACLE_TYPES = ["🚧", "🛑", "🛵","🏍️","🚜","🛻","🛺", "🚕", "🚙", "🚓", "🚒", "🚜", "🚚", "🚛"];
 
 function App() {
   const [gameState, setGameState] = useState("start"); // start, playing, gameover
